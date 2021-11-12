@@ -65,8 +65,7 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = Var.URL + 'watch/' + str(log_msg.message_id)
         shortlink = get_shortlink(stream_link) 
-        if shortlink:
-            stream_link = shortlink
+        
         online_link = Var.URL + 'download/'+ str(log_msg.message_id) 
         shortlinka = get_shortlink(online_link)
         if shortlinka:

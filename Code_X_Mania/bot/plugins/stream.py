@@ -93,7 +93,7 @@ async def private_receive_handler(c: Client, m: Message):
 
 <b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>
 
-<b> 🖥 WATCH / Download    :</b> <i>{}</i>
+<b> 🖥 WATCH / Download :</b> <i>{}</i>
 
 <b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE  </b>
 

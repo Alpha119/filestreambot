@@ -68,8 +68,7 @@ async def private_receive_handler(c: Client, m: Message):
         
         online_link = Var.URL + 'download/'+ str(log_msg.message_id) 
         shortlinka = get_shortlink(online_link)
-        if shortlinka:
-            online_link = shortlinka
+       
         
         file_size = None
         if m.video:
@@ -96,11 +95,11 @@ async def private_receive_handler(c: Client, m: Message):
 
 <b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>
 
-<b> 🖥 WATCH    :</b> <i>{}</i>
+<b> 🖥 WATCH / Download    :</b> <i>{}</i>
 
 <b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE  </b>
 
-<i>© @AdarshGoelo5 </i>"""
+<i>© @filestolinks007 </i>"""
 
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True, parse_mode="Markdown", quote=True)
         await m.reply_text(

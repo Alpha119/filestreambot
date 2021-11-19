@@ -13,14 +13,16 @@
 </head>
 
 
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/jwplayer/web-player-demos/demos/custom-css-demo/assets/alaska.css'>
-<script src="//jwpsrv.com/library/O4mPlqeTEeK_viIACpYGxA.js"></script>
-<div id="my-video1">
-</div>
-<script>// <![CDATA[
+    <script src="//player2.h-cdn.com/hola_player.js?customer=hc_e4907550"></script>
 
-jwplayer('my-video1').setup({         file:'%s',image : '',        width: '100%',type:'video/mp4',        height: '650px',         autostart: 'true',            primary: 'php', hlshtml:"true"   });
+<video class="video-js vjs-default-skin" controls="" height="650" width="350">
 
-// ]]></script>
+    <source src="%s"></source>
+
+</video><script>
+
+    window.hola_player();
+
+</script>
 </body>
 </html>

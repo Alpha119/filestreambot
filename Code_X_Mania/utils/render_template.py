@@ -30,6 +30,13 @@ async def render_page(message_id):
             heading = 'Watch {}'.format(file_name)
             tag = mime_type.split('/')[0].strip()
             html = (await r.read()).replace('tag', tag) % (heading, file_name, src)
+    
+    if mime_type.lower() in video_formats:
+        async with aiofiles.open('Code_X_Mania/template/req2.html') as r:
+            heading = 'Embed {}'.format(file_name)
+            tag = mime_type.split('/')[0].strip()
+            html = (await r.read()).replace('tag', tag) % (heading, file_name, src)
+    
     elif mime_type.lower() in audio_formats:
         async with aiofiles.open('Code_X_Mania/template/req.html') as r:
             heading = 'Listen {}'.format(file_name)

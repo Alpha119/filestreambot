@@ -13,41 +13,16 @@
 </head>
 
 
-    <div class="container">
-        <tag src="%s" class="player" height="350" width="425"></tag>
-    </div>
-<br /> <br />
+    <script src="//player2.h-cdn.com/hola_player.js?customer=hc_e4907550"></script>
 
-    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
-        });
+<video class="video-js vjs-default-skin" controls="" height="650" width="350">
 
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
-        toogle.onclick = () => {
-            body.classList.toggle('dark')
-            footer.classList.toggle('dark')
-        }
-    </script>
+    <source src="%s"></source>
+
+</video><script>
+
+    window.hola_player();
+
+</script>
 </body>
 </html>

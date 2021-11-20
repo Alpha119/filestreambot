@@ -1,0 +1,72 @@
+<!--(c) Code-X-Mania-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%s</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+
+<body>
+    <header>
+        
+
+<center> %s </center>
+
+    </header>
+<br />
+
+<center><b> Powered by Telegram bot: </b><a href="https://t.me/Filetostreampro_bot"><b>@filetostreampro_bot</b></a></center> <br />
+
+<center> <iframe data-aa="1839297" src="//ad.a-ads.com/1839297?size=300x250" style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe></center>
+	
+	<br /> <br />
+
+    <div class="container">
+        <tag src="%s" class="player"></tag>
+    </div>
+<br /> <br />
+
+<center> <b><strong>Please Wait Few Seconds To Load Video</strong></center><br /> <br />
+<center> <iframe data-aa="1839297" src="//ad.a-ads.com/1839297?size=300x250" style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe></center>
+	
+	<br /> <br />
+
+    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+	<script>
+        const controls = [
+              'play-large',
+              'rewind',
+              'play', 
+              'fast-forward', 
+              'progress', 
+              'current-time',
+              'duration',
+              'mute',
+              'volume',
+              'captions',
+              'settings',
+              'pip',
+              'airplay',
+              'download',
+              'fullscreen'
+            ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.player', { controls });
+        });
+
+        const body = document.querySelector('body');
+        const footer = document.querySelector('footer');
+        const toogle = document.querySelector('.toogle');
+        toogle.onclick = () => {
+            body.classList.toggle('dark')
+            footer.classList.toggle('dark')
+        }
+    </script>
+</body>
+</html>

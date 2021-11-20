@@ -29,7 +29,7 @@ async def render_page(message_id):
         async with aiofiles.open('Code_X_Mania/template/req.html') as r:
             heading = 'Watch {}'.format(file_name)
             tag = mime_type.split('/')[0].strip()
-            html = (await r.read()).replace('tag', tag) % (heading, src)
+            html = (await r.read()).replace('tag', tag) % (heading, file_name, src, src)
     
     elif mime_type.lower() in audio_formats:
         async with aiofiles.open('Code_X_Mania/template/req.html') as r:

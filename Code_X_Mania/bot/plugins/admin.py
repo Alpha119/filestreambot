@@ -25,7 +25,7 @@ async def sts(c: Client, m: Message):
 @StreamBot.on_message(filters.command("broadcast") & filters.private & filters.user(Var.OWNER_ID) & filters.reply & ~filters.edited)
 async def broadcast_(c, m):
     all_users = await db.get_all_users()
-    broadcast_msg = m.reply_to_message
+    broadcast_msg = m
     while True:
         broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
         if not broadcast_ids.get(broadcast_id):

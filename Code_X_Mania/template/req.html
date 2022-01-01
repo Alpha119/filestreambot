@@ -11,7 +11,32 @@
  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
     <!-- <link rel="stylesheet" href="style.css"> -->
+<!-- video player -->
 
+        <link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css">
+        <script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .container{
+                text-align: center;
+                margin: 0% auto;
+            }
+            @media (orientation: landscape) {
+                .container{
+                    max-width: 750px;
+                }
+            }
+            
+            #video-fully-responsive{
+                width: 100%;
+            }
+            vast_video_loading_video-fully-responsive{
+                height: 100;
+            }
+            
+        </style>
+
+        <!-- video player ends-->
 </head>
 
 <style>
@@ -66,7 +91,59 @@ a {text-decoration: none; background-color: none; }
 	<br /> <br />
 
     <div class="container">
-        <tag src="%s" class="player"></tag>
+                <!-- video -->
+
+        <video id="video-fully-responsive" controls >
+            <source src=%s type="video/mp4">
+        </video>
+
+        <!-- video end -->
+
+
+        <!-- video player settings -->
+        <script>
+        fluidPlayer(
+            'video-fully-responsive',
+            {
+                layoutControls: {
+                    fillToContainer: true,
+                    allowDownload: true
+                }
+            },
+
+            {
+        vastOptions: {
+            adList:                     {
+
+            roll: 'preRoll',
+            vastTag: '',
+            adText: 'Advertising supports us directly'
+
+            },
+            skipButtonCaption:          'Skip ad in 5 seconds',
+            skipButtonClickCaption:     'Skip ad <span class="skip_button_icon"></span>',
+            adText:                     null,
+            adTextPosition:             'top left',
+            adCTAText:                  'Visit now!',
+            adCTATextPosition:          'bottom right',
+            vastTimeout:                5000,
+            showPlayButton:             false,
+            maxAllowedVastTagRedirects: 5,
+
+            vastAdvanced: {
+                vastLoadedCallback:       (function() { console.log("Loaded") }),
+                noVastVideoCallback:      (function() { console.log("No bro") }),
+                vastVideoSkippedCallback: (function() { console.log("skippy") }),
+                vastVideoEndedCallback:   (function() { console.log("ended") })
+            }
+
+        }
+    }
+
+        );
+        </script>
+
+        <!-- video player settings end -->
     </div>
 <br /> <br />
 
@@ -77,36 +154,7 @@ a {text-decoration: none; background-color: none; }
 	
 	<br /> <br />
 
-    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
-        });
+    
 
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
-        toogle.onclick = () => {
-            body.classList.toggle('dark')
-            footer.classList.toggle('dark')
-        }
-    </script>
 </body>
 </html>
